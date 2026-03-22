@@ -1,0 +1,8 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Постановка задачи}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Формулировка задачи}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Метод решения}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Пример решения задачи}{3}{section.2}%
+\contentsline {section}{\numberline {3}Доказательство оптимальности}{21}{section.3}%
+\contentsline {section}{\numberline {4}Вычислительный эксперимент}{23}{section.4}%
+\contentsline {section}{\numberline {5}Вывод}{24}{section.5}%

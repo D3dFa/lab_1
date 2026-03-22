@@ -1,0 +1,65 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english, russian]{babel} % Поддержка английского и русского языков
+\usepackage[utf8]{inputenc} % Кодировка UTF-8
+\usepackage[T2A]{fontenc} % Кодировка шрифтов для кириллицы
+\usepackage{setspace} % Для настройки межстрочного интервала
+% \setstretch{1.3} % Установка межстрочного интервала
+\usepackage{anyfontsize} % Поддержка произвольного размера шрифта
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} % Математические пакеты
+\usepackage{algorithm} % Для алгоритмов
+\usepackage{algpseudocode} % Для псевдокода
+\usepackage{geometry} % Для настройки полей
+\usepackage{graphicx} % Для работы с графикой
+\usepackage{wrapfig} % Для обтекания текста вокруг фигур
+\usepackage{float} % Для управления плавающими объектами
+\usepackage{xcolor} % Для работы с цветами
+\usepackage{multicol} % Для многоколоночного текста
+\usepackage{listings} % Для отображения кода
+\usepackage{subcaption} % Для подзаголовков
+\usepackage{booktabs} % Для улучшенных таблиц
+\usepackage{hyperref} % Для гиперссылок
+\usepackage{stmaryrd} % Для дополнительных математических символов
+\usepackage{tocloft} % Для настройки оглавления
+\usepackage{fancyhdr} % Для настройки заголовков и подвалов
+\usepackage{pgffor} % Для циклов
+\usepackage{color} % Для работы с цветами
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+% \usepackage{subfigure}
+\geometry{a4paper, portrait, margin=20mm, bmargin=15mm, tmargin=15mm} % Настройка полей
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mybackgroundcolory}{rgb}{0.975,1,1}
+
+\lstset{ %
+  backgroundcolor=\color{mybackgroundcolory},   % Цвет фона
+  basicstyle=\footnotesize\ttfamily,        % Размер шрифта для кода
+  breakatwhitespace=false,         % Автоматический перенос только на пробелах
+  breaklines=true,                 % Автоматический перенос строк
+  captionpos=b,                    % Позиция заголовка внизу
+  commentstyle=\color{mygreen},    % Стиль комментариев
+  deletekeywords={...},            % Удаление ключевых слов
+  escapeinside={\%*}{*)},          % Добавление LaTeX внутри кода
+  extendedchars=false,              % Использование не-ASCII символов
+  frame=single,                    % Рамка вокруг кода
+  keepspaces=true,                 % Сохранение пробелов
+  keywordstyle=\color{blue},       % Стиль ключевых слов
+  language=Python,                 % Язык кода
+  otherkeywords={*,...},            % Добавление дополнительных ключевых слов
+  numbers=left,                    % Позиция номеров строк
+  numbersep=5pt,                   % Расстояние между номерами строк и кодом
+  numberstyle=\tiny\color{mygray}, % Стиль номеров строк
+  rulecolor=\color{black},         % Цвет рамки
+  showspaces=false,                % Показ пробелов
+  showstringspaces=false,          % Подчеркивание пробелов в строках
+  showtabs=false,                  % Показ табуляций
+  stepnumber=1,                    % Шаг между номерами строк
+  stringstyle=\color{mymauve},     % Стиль строковых литералов
+  tabsize=4,                       % Размер табуляции
+  title=\lstname                   % Показ имени файла
+}

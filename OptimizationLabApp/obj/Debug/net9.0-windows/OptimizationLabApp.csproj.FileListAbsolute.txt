@@ -2,7 +2,6 @@ C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\Optimi
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\OptimizationLabApp.AssemblyInfoInputs.cache
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\OptimizationLabApp.AssemblyInfo.cs
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\OptimizationLabApp.csproj.CoreCompileInputs.cache
-C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\bin\Debug\net9.0-windows\OptimizationLabApp.exe
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\bin\Debug\net9.0-windows\OptimizationLabApp.deps.json
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\bin\Debug\net9.0-windows\OptimizationLabApp.runtimeconfig.json
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\bin\Debug\net9.0-windows\OptimizationLabApp.dll
@@ -12,3 +11,5 @@ C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\refint
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\OptimizationLabApp.pdb
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\OptimizationLabApp.genruntimeconfig.cache
 C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\ref\OptimizationLabApp.dll
+C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\obj\Debug\net9.0-windows\OptimizationLabApp.sourcelink.json
+C:\Users\Andrey\Desktop\lab_1\OptimizationLabApp\bin\Debug\net9.0-windows\OptimizationLabApp.exe

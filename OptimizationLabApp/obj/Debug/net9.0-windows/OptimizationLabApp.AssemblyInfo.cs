@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptimizationLabApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a72d7c5dc2f7278daa41be4e7c2441e61599ebd")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptimizationLabApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OptimizationLabApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

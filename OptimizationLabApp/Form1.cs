@@ -29,6 +29,8 @@ public partial class Form1 : Form
     private readonly Label objectiveValueLabel = new();
     private readonly Label experimentStatusValueLabel = new();
     private readonly Label baseObjectiveValueLabel = new();
+    private readonly Label solutionInlineValueLabel = new();
+    private readonly TextBox solutionSummaryTextBox = new();
 
     private readonly TextBox canonicalFormTextBox = CreateReadOnlyTextBox();
     private readonly TextBox transformationTextBox = CreateReadOnlyTextBox();
@@ -337,9 +339,11 @@ public partial class Form1 : Form
         {
             Dock = DockStyle.Fill,
             ColumnCount = 1,
-            RowCount = 3
+            RowCount = 5
         };
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 74f));
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
 
@@ -351,12 +355,16 @@ public partial class Form1 : Form
         };
         solveStatusValueLabel.AutoSize = true;
         objectiveValueLabel.AutoSize = true;
+        solutionInlineValueLabel.AutoSize = true;
+        solutionInlineValueLabel.MaximumSize = new Size(700, 0);
         statusPanel.Controls.AddRange(
         [
             CreateCaptionLabel("Статус:"),
             solveStatusValueLabel,
             CreateCaptionLabel("Оптимальное значение:"),
-            objectiveValueLabel
+            objectiveValueLabel,
+            CreateCaptionLabel("Решение:"),
+            solutionInlineValueLabel
         ]);
         layout.Controls.Add(statusPanel, 0, 0);
 
@@ -369,8 +377,21 @@ public partial class Form1 : Form
         };
         layout.Controls.Add(helperLabel, 0, 1);
 
+        ConfigureSolutionSummaryTextBox();
+        layout.Controls.Add(solutionSummaryTextBox, 0, 2);
+
+        var tableLabel = new Label
+        {
+            Text = "Таблица значений переменных",
+            AutoSize = true,
+            Font = new Font(Font, FontStyle.Bold),
+            Padding = new Padding(0, 2, 0, 4)
+        };
+        layout.Controls.Add(tableLabel, 0, 3);
+
         ConfigureReadOnlyGrid(solutionGrid);
-        layout.Controls.Add(solutionGrid, 0, 2);
+        solutionGrid.MinimumSize = new Size(0, 95);
+        layout.Controls.Add(solutionGrid, 0, 4);
 
         return layout;
     }
@@ -657,10 +678,21 @@ public partial class Form1 : Form
 
         if (result.Status == SimplexStatus.Optimal)
         {
+            var summaryLines = new List<string>(result.VariableNames.Length);
             for (var index = 0; index < result.VariableNames.Length; index++)
             {
-                solutionGrid.Rows.Add(result.VariableNames[index], FormattingHelpers.FormatNumber(result.VariableValues[index]));
+                var formattedValue = FormattingHelpers.FormatNumber(result.VariableValues[index]);
+                solutionGrid.Rows.Add(result.VariableNames[index], formattedValue);
+                summaryLines.Add($"{result.VariableNames[index]} = {formattedValue}");
             }
+
+            solutionSummaryTextBox.Text = string.Join(Environment.NewLine, summaryLines);
+            solutionInlineValueLabel.Text = string.Join("; ", summaryLines);
+        }
+        else
+        {
+            solutionSummaryTextBox.Text = "Значения переменных недоступны, потому что решение не найдено.";
+            solutionInlineValueLabel.Text = "н/д";
         }
 
         canonicalFormTextBox.Text = result.CanonicalForm;
@@ -750,6 +782,7 @@ public partial class Form1 : Form
     {
         solveStatusValueLabel.Text = "ожидание ввода";
         objectiveValueLabel.Text = "-";
+        solutionInlineValueLabel.Text = "-";
         experimentStatusValueLabel.Text = "эксперимент не запущен";
         baseObjectiveValueLabel.Text = "-";
 
@@ -758,6 +791,7 @@ public partial class Form1 : Form
         experimentGrid.Columns.Clear();
         experimentGrid.Rows.Clear();
 
+        solutionSummaryTextBox.Clear();
         canonicalFormTextBox.Clear();
         transformationTextBox.Clear();
         iterationLogTextBox.Clear();
@@ -797,6 +831,17 @@ public partial class Form1 : Form
             WordWrap = false,
             Font = new Font("Consolas", 9.5f, FontStyle.Regular, GraphicsUnit.Point)
         };
+    }
+
+    private void ConfigureSolutionSummaryTextBox()
+    {
+        solutionSummaryTextBox.Dock = DockStyle.Fill;
+        solutionSummaryTextBox.Multiline = true;
+        solutionSummaryTextBox.ReadOnly = true;
+        solutionSummaryTextBox.ScrollBars = ScrollBars.Vertical;
+        solutionSummaryTextBox.WordWrap = true;
+        solutionSummaryTextBox.BackColor = SystemColors.Window;
+        solutionSummaryTextBox.Font = new Font("Consolas", 10f, FontStyle.Regular, GraphicsUnit.Point);
     }
 
     private Bitmap CreateChartBitmap(
